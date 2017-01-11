@@ -16,8 +16,8 @@ else{
 }
 
 var userName = true;
-var admin = true;
-var manager = true;
+var admin = false;
+var manager = false;
 var emp = true
 if(userName){
 	console.log("You're Logged In");
