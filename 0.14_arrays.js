@@ -1,7 +1,7 @@
 //this is how to create a js
   //            0       1     2       3
 var names = ["paul", "gav","vern", "lisa"];
-var nums = [1, 2,3, 4, 5,];
+var nums = [1, 2, 3, 4, 5,];
 var mixed = ["dog", false, 6, "squirrel", 2]
 console.log(names[2]);
 console.log(nums[4]);

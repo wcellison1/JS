@@ -25,9 +25,8 @@ console.log(age += 1);
 //console.log(age /=2)
 console.log(age*=2);
 
-//var 2nite ="wednesday night"
-
-var int = 5
+var twoNite ="wednesday night"
+console.log(twoNite);
 
 //bronze challenge
 var numberOfPets = 2
