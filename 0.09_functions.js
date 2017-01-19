@@ -7,7 +7,7 @@ hello();
 function greeting(name){
 	console.log("Hi " + name);
 }
-greeting("jona")
+greeting("jona");
 
 //adding number to functions
 function printNumber(){
@@ -68,7 +68,7 @@ function checkOdd(num) {
 		return "nope," + num + "yo"
 	}
 }
-console.log(checkOdd(12))
+console.log(checkOdd(14))
 
 //function diByThree(num) {
 	//if (num % 3 === 0){

@@ -18,4 +18,4 @@ switch (marginOfColtsSuperBowlWins){
 	default: 
 		result ="getting there"
 }
-console.log("Switch Result: " + result)
+console.log(" Switch Result: " + result)

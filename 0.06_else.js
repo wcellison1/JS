@@ -22,7 +22,7 @@ if(elevStuckAndWeAreOnIt){
 	console.log("cry");
 }
 else{
-	console("enjoy");
+	console.log("enjoy");
 }
 //bronze challenge
 var age = 19
