@@ -1,0 +1,964 @@
+/* base styles */
+*{font-family: 'Ubuntu', sans-serif;}
+li, ul, h1, h2, h3, h4{margin: 0; padding: 0; list-style-type: none;}
+
+/* utility rules */
+
+.loading{ color: #eee; text-align: center; display: block; padding: 20px;}
+
+ul::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+ul::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+ul::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+ul::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0,0,0,0.4); 
+}
+.invalid{display: none;}
+.valid{display: inline-block;}
+.wrapper{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.btn{
+    color: #ccc;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn-green{
+    background: #276a1e;
+}
+
+.btn-red{
+    background: #88181b;
+}
+
+.btn-blue{
+    background: #152744;
+}
+
+.btn-yellow{
+    background:#c37b14;
+}
+
+/* header styles */
+body{margin: 0; background: #181c22;}
+
+.logo a{
+    display: block;
+    height: 100%;
+}
+
+#site-header{
+    background: #0e1218;
+    position: relative;
+    z-index: 1;
+}
+
+.account-links .account-pop{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.account-links .account-pop > div{
+    width: 400px;
+    background: #0e1218;
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 4px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.4);
+    border: 3px solid #1e2228;
+    display: none;
+    position: relative;
+}
+.account-links .account-pop > div p{
+    color: #bbb;
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+.account-links .account-pop > div span{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.account-links .account-pop > div input{
+    display: block;
+    background: #1e2228;
+    border: 0;
+    padding: 16px;
+    width: 80%; 
+    margin: 20px auto;
+    border-radius: 4px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.account-links .account-pop > div button{
+    width: 140px;
+    margin: 30px auto;
+    display: block;
+    padding: 10px;
+    border: 0;
+    border-radius: 4px;
+    background: #276a1e;
+    color: #ccc;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.account-links .account-pop > div .cross{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background: #1e2228;
+    padding: 8px 10px;
+    line-height: 1em;
+    text-transform: uppercase;
+    border-radius: 0 4px 0 4px;
+    font-weight: bold;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.account-links .account-pop > div.active{
+    display: block;
+}
+
+.account-links.active .account-pop{
+    display: block;
+}
+
+.account-links{
+    padding: 16px 16px 16px 52px;
+    background: #181c22;
+    color: #ccc;
+    display: inline-block;
+    background-image: url(../img/global/mini-ninja.png);
+    background-repeat: no-repeat;
+    background-position: 14px center;
+    background-size: 22px;
+}
+
+.account-links > ul{
+    cursor: pointer;
+}
+
+#header-links{
+    width: 100%;
+
+}
+
+#user-component{
+    float: left;
+}
+
+.social-links{
+    float: right;
+}
+
+#header-links:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.main-logo{
+    position: relative;
+    width: 100%;
+    height: 0px;
+    z-index: 1;
+}
+
+.main-logo .logo{
+    position: relative;
+    background: url(../img/global/logo.png) no-repeat;
+    background-position: center;
+    height: 80px;
+    text-indent: -10000px;
+    top: 0;
+    width: 200px;
+    margin: 0 auto;
+    top: -50px;
+}
+
+.main-logo.active .logo{
+    opacity: 0.2;
+}
+
+#account-info li:first-child{
+    text-indent: -10000px;
+    height: 56px; width: 60px;
+    background: url(../img/global/mini-ninja.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 10px auto 0;
+}
+
+#account-info li{
+    text-align: center;
+}
+
+#account-info li a{
+    color: #ccc;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    display: block
+}
+
+#account-info li.white{
+    width: 60px;
+    height: 10px;
+    background: #eee;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+#account-info li.orange{
+    width: 60px;
+    height: 10px;
+    background: orange;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+#account-info li.purple{
+    width: 60px;
+    height: 10px;
+    background: purple;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+#account-info li.yellow{
+    width: 60px;
+    height: 10px;
+    background: yellow;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+#account-info li.blue{
+    width: 60px;
+    height: 10px;
+    background: #114499;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+#account-info li.brown{
+    width: 60px;
+    height: 10px;
+    background: #441111;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+#account-info li.red{
+    width: 60px;
+    height: 10px;
+    background: crimson;
+    margin: 0 auto 10px;
+    border-radius: 0 0 4px 4px
+}
+
+
+/* homepage styles */
+
+.page-banner{
+    background: url(../img/homepage/banner.png);
+    position: relative;
+    padding: 5% 0;
+}
+
+.banner-text{
+    text-align: center;
+    color: #fff;
+}
+
+.banner-text h2{
+    font-size: 68px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 4px;
+    line-height: 1.3em;
+}
+
+.banner-text h3{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 4px;
+    margin-top: 20px;
+}
+
+#homepage-courses{
+    background: #090d13;
+    padding: 60px 0;
+}
+
+#homepage-courses .btn{
+    width: 300px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+#homepage-courses div > ul{
+    padding: 20px 10px;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#homepage-courses div > ul > li{
+    flex-basis: 200px;
+    flex-grow: 1;
+    margin: 0 10px;
+    padding: 10px;
+    background: #181c22;
+    border-radius: 4px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
+}
+
+#homepage-courses a{
+    text-decoration: none;
+}
+
+#homepage-courses .course-name, #homepage-courses .course-count{
+    display: block;
+    color: #ccc;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+}
+
+#homepage-courses .course-count{
+    color: #999;
+    font-size: 14px;
+}
+
+#homepage-courses .course-cover img{
+    width: 100%;
+    border-radius: 4px;
+    opacity: 0.7;
+    position: relative;     
+}
+
+#homepage-courses h2{
+    color: #ccc;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 20px;
+ 
+}
+
+#homepage-bulletins{
+    background: #0e1218;
+    padding: 80px 0 120px;
+    background-image: url(../img/global/small-logo.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+#homepage-bulletins .wrapper{
+    display: flex;
+}
+
+#homepage-bulletins .bulletin{
+    background: #090d13;
+    margin: 20px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding: 40px;
+    color: #777;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    border-radius: 4px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.5);
+    position: relative;
+    padding-bottom: 120px
+}
+
+#homepage-bulletins .bulletin:nth-child(2){
+    margin: 20px 160px;
+}
+
+#homepage-bulletins .bulletin h4{
+    text-transform: uppercase; 
+    color: #ccc;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#homepage-bulletins .bulletin a{
+    width: 40%;
+    display: block;
+    font-size: 18px;
+    margin: 20px auto;
+    position: absolute; 
+    bottom: 20px;
+    left: 30%;
+}
+
+@media screen and (max-width: 1640px){
+
+.wrapper{
+    max-width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#homepage-bulletins .bulletin{
+    margin: 20px !important;
+}
+
+#homepage-bulletins .bulletin a{
+    width: 60%;
+    left: 20%;
+}
+
+}
+
+@media screen and (max-width: 1200px){
+
+#homepage-bulletins .wrapper{
+    flex-wrap: wrap;
+}
+
+#homepage-bulletins .bulletin a{
+    width: 40%;
+    left: 30%;
+}
+
+#homepage-courses div > ul{
+    display: block;
+}
+
+#homepage-courses div > ul li{
+    float: left;
+    width: 46%;
+    margin: 2%;
+    box-sizing: border-box;
+}
+
+}
+
+@media screen and (max-width: 860px){
+
+#homepage-courses .course-name{
+    display: none;
+}
+
+.banner-text h2{
+    font-size: 44px;
+    margin: 10px;
+}
+
+footer .social, footer .about{
+    float: left;
+    clear: left;
+    width: 100%;
+}
+
+footer .social-links{
+    float: left;
+}
+
+}
+
+@media screen and (max-width: 720px){
+
+#header-links{display: none}
+.main-logo .logo{top: 0; position: relative;}
+.main-logo{height: 50px; background: #0e1218}
+}
+
+@media screen and (max-width: 600px){
+
+#homepage-courses div > ul li{
+    width: 96%;
+}
+#homepage-bulletins .bulletin a{
+    width: 80%;
+    left: 10%;
+}
+#homepage-bulletins .bulletin{
+    padding: 20px 20px 100px;
+    margin: 20px 0 !important;
+}
+
+.banner-text h2{
+    font-size: 34px;
+    margin: 10px;
+}
+
+.banner-text h3{
+    font-size: 18px;
+    margin: 10px;
+}
+
+}
+
+
+/* footer styles */
+
+footer{
+    background: #181c22;
+    color: #999;
+    padding: 40px 0;
+}
+
+footer .about{
+    max-width: 600px;
+    float: left;
+}
+
+footer h3{
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer p, footer li{
+    line-height: 1.5em;
+}
+
+footer .social{
+    float: right;
+}
+
+footer:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.social-links{
+    display: flex;
+}
+
+footer .social-links{
+    margin-top: 20px;
+}
+
+.social-links li a{
+    text-indent: -10000px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/global/social.png);
+    display: block;
+}
+
+.social-links li a.youtube{
+    background-position: -350px -46px;
+    background-size: 500px;
+}
+
+.social-links li a.twitter{
+    background-position: -190px 7px;
+    background-size: 500px;
+}
+
+/* courses page */
+
+#search-all-courses{
+    background:  #0e1218
+}
+
+#search-courses{
+    background: url(../img/homepage/banner.png);
+    padding: 120px 0 80px 0;
+}
+
+#search-courses h2{
+    color: #eee;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 48px;
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+#search-courses form{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#search-courses input{
+    padding: 20px;
+    width: 600px;
+    border: 1px solid #eee;
+    border-radius: 0;
+    margin: 0 auto;
+    display: block;
+    border-radius: 4px;
+    background: #181c22;
+    color: #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    max-width: 80%;
+}
+
+#search-all-courses div > ul{
+    padding: 20px 10px;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+#search-all-courses div > ul > li{
+    flex-grow: 1;
+    margin: 10px 10px;
+    padding: 10px;
+    background: #181c22;
+    border-radius: 4px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    flex-basis: 200px;
+    min-width: 250px;
+    max-width: 360px;
+}
+
+#search-all-courses a{
+    text-decoration: none;
+}
+
+#search-all-courses .course-name, #search-all-courses .course-count{
+    display: block;
+    color: #ccc;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+}
+
+#search-all-courses .course-count{
+    color: #999;
+    font-size: 14px;
+}
+
+#search-all-courses .course-cover img{
+    width: 100%;
+    border-radius: 4px;
+    opacity: 0.7;
+    position: relative;     
+}
+
+/* single styles */
+
+#add-to-favs{
+    float: right;
+    margin: 30px 0 0;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 0 none rgb(177,106,2);
+    border-bottom: 1px solid rgb(177,106,2);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    background: -webkit-linear-gradient(-90deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    background: -moz-linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    background: linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    box-shadow: 0 -1px 1px 0 rgba(255,255,255,0.701961) inset, 0 1px 1px 0 rgb(177,106,2) ;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.498039) ;
+}
+
+#add-to-favs.active{
+
+}
+
+#add-to-favs {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 0 none rgb(177,106,2);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  background: -webkit-linear-gradient(-90deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  background: -moz-linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  background: linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  box-shadow: 0 -1px 1px 0 rgba(255,255,255,0.701961) inset, 0 1px 1px 0 rgb(177,106,2) ;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.798039) ;
+  font-size: 16px
+}
+
+#add-to-favs:hover {
+  background: rgb(225, 157, 60);
+}
+
+
+.single-wrapper .course-buttons{
+    float: left;
+    margin: 30px 0 0
+}
+
+.course-buttons .inactive{
+    display: none;
+}
+
+.banner-text .btn-green{
+    margin-top: 30px;
+}
+
+.btn-github, .btn-youtube{
+    margin-right: 20px;
+}
+
+.course-buttons li{
+    display: inline-block;
+}
+
+.single-video{
+    float: left;
+    width: 1036px;
+    margin: 40px 0;
+    clear: both;
+}
+
+.single-contents{
+    float: right;
+    width: 520px;
+    box-sizing: border-box;
+    background: #0e1218;
+    border-radius: 4px;
+    max-height: 600px;
+    overflow: auto;
+    margin: 40px 0;
+}
+
+.single-contents li{
+    padding: 16px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.single-contents li:nth-child(even){
+    background: rgba(0,0,0,0.15)
+}
+
+.single-contents li:hover{
+    background: rgba(255,255,255, 0.02)
+}
+
+.single-contents li.watched{
+    background-image: url(../img/global/mini-ninja.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 86% center;
+}
+.single-contents li.watched:after{
+    content: "watched";
+    float: right;
+    font-size: 12px;
+    line-height: 18px
+}
+
+.single-details{
+    clear: both;
+}
+
+pre{
+    white-space: pre-wrap
+}
+
+.single-details{
+    background: #0e1218;
+    padding: 40px 0;
+    color: #999
+}
+
+.tab-content{
+    padding: 40px;
+    margin: 20px 0;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0 4px 4px 4px;
+    line-height: 1.4em;
+    margin-top: 0;
+}
+
+.video-description h2, .course-description h2{
+    font-weight: normal;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 30px
+}
+
+.tab-content > div{
+    display: none;
+}
+
+.tab-content > div.active{
+    display: block;
+}
+
+.tabs li{
+    display: inline-block;
+    padding: 20px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-right: 10px;
+    border-bottom: 0;
+    cursor: pointer;
+}
+
+.tabs li.active{
+    background: rgba(255,255,255,0.05);
+    padding-top: 26px;
+}
+
+#pre-footer{
+    text-align: center;
+    color: #aaa;
+    background: rgba(0,0,0,0.1);
+    padding: 10px;
+}
+
+@media screen and (max-width: 1640px){
+
+.single-video iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !Important;
+    height: 100% !important;
+}
+
+.single-video{
+    width: 65%;
+    position: relative;
+    padding-bottom: 36.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.single-contents{
+    width: 33%;
+    height: 0;
+    padding: 0 0 38.3% 0;
+}
+
+
+} 
+
+@media screen and (max-width: 1300px){
+
+.single-video{
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.single-contents{
+    width: 33%;
+    height: 0;
+    padding: 0 0 38.3% 0;
+}
+
+.single-contents{
+    width: 100%;
+    height: auto;
+    padding:0;
+    margin-top: 0;
+}
+
+}
+
+/* favourites */
+
+#favs ul{
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+#favs li{
+    display: block;
+    clear: both;
+    background: rgba(0,0,0,0.1);
+    padding: 20px 10px;
+}
+
+#favs li:nth-child(even){
+    background: rgba(0,0,0,0.2);
+
+}
+
+#favs li a:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#favs li > a{
+    padding: 20px 0;
+    color: #ccc;
+    text-decoration: none;
+}
+
+#favs li > a span{
+    display: block;
+    box-sizing: border-box;
+    padding: 5px 20px;
+}
+
+#favs li > a span.course-cover{
+    width: 20%;
+    float: left;
+}
+
+#favs li > a span.course-name{
+    padding-top: 20px;
+    font-size: 24px
+}
+
+#favs li > a span.course-cover img{
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+
